@@ -1,0 +1,7 @@
+{
+  "name": "@verbose-telegram/shared",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./types/index.ts"
+  }
+}

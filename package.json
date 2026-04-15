@@ -1,0 +1,13 @@
+{
+  "name": "verbose-telegram",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server", "shared"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "test": "npm run test --workspace=client && npm run test --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
