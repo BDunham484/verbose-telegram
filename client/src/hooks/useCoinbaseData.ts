@@ -39,7 +39,7 @@ export const useCoinbaseData = (symbol: string, granularity: number): CoinbaseDa
   const fetchAll = async () => {
     try {
       setStatus('loading');
-      const intradayDays = Math.ceil((300 * granularity) / 86_400);
+      const intradayDays = Math.floor((300 * granularity) / 86_400);
       const [intraday, daily] = await Promise.all([
         fetchJson<Candle[]>(buildCandleUrl(symbol, granularity, intradayDays)),
         fetchJson<Candle[]>(buildCandleUrl(symbol, DAILY_GRANULARITY, 60)),
