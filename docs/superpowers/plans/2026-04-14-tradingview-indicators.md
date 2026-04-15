@@ -269,7 +269,7 @@ git commit -m "feat: express server scaffold with health check"
 - Create: `server/src/routes/candles.ts`
 - Modify: `server/src/app.ts`
 
-- [ ] **Step 1: Write the failing test for the candles route**
+- [x] **Step 1: Write the failing test for the candles route**
 
 Create `server/src/__tests__/routes/candles.test.ts`:
 
@@ -305,13 +305,13 @@ describe('GET /api/candles', () => {
 });
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `npm run test --workspace=server`
 
 Expected: FAIL — `Cannot find module '../../coinbase/client.js'`
 
-- [ ] **Step 3: Write server/src/coinbase/client.ts**
+- [x] **Step 3: Write server/src/coinbase/client.ts**
 
 ```typescript
 import type { Candle } from '../../../shared/types/index.js';
@@ -340,7 +340,7 @@ export const fetchCandles = async (
 };
 ```
 
-- [ ] **Step 4: Write server/src/routes/candles.ts**
+- [x] **Step 4: Write server/src/routes/candles.ts**
 
 ```typescript
 import { Router } from 'express';
@@ -365,7 +365,7 @@ candlesRouter.get('/', async (req, res) => {
 });
 ```
 
-- [ ] **Step 5: Register the route in server/src/app.ts**
+- [x] **Step 5: Register the route in server/src/app.ts**
 
 ```typescript
 import express from 'express';
@@ -384,13 +384,13 @@ app.get('/health', (_req, res) => {
 app.use('/api/candles', candlesRouter);
 ```
 
-- [ ] **Step 6: Run tests to verify they pass**
+- [x] **Step 6: Run tests to verify they pass**
 
 Run: `npm run test --workspace=server`
 
 Expected: PASS (2 tests)
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add server/src/
